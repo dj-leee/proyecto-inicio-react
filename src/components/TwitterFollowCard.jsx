@@ -25,8 +25,8 @@ function TwitterFollowCard ({ userName, name }) {
     // Explicación: Creamos variables para decidir qué texto o clase usar.
     const text = isFollowing ? 'Siguiendo' : 'Seguir';
     const buttonClassName = isFollowing 
-      ? 'tw-followCard-button is-following' 
-      : 'tw-followCard-button';
+      ? 'tw-follow-card__button is-following' 
+      : 'tw-follow-card__button';
 
     // 5. Función para manejar el clic:
     const handleClick = () => {
@@ -37,19 +37,19 @@ function TwitterFollowCard ({ userName, name }) {
 
     return (
         // 6. El JSX (La estructura visual)
-        <article className='tw-followCard'>
-            <header className='tw-followCard-header'>
+        <article className='tw-follow-card'>
+            <header className='tw-follow-card__header'>
                 <img
-                    className='tw-followCard-avatar'
+                    className='tw-follow-card__avatar'
                     alt={`El avatar de ${name}`}
                     // Explicación: Usamos la prop 'userName' para obtener la imagen
                     src={`https://unavatar.io/${userName}`} 
                 />
-                <div className='tw-followCard-info'>
+                <div className='tw-follow-card__info'>
                     {/* Explicación: Usamos la prop 'name' para mostrar el nombre */}
-                    <strong className='tw-followCard-name'>{name}</strong> 
+                    <strong className='tw-follow-card__name'>{name}</strong> 
                     {/* Explicación: Usamos la prop 'userName' */}
-                    <span className='tw-followCard-infoUserName'>@{userName}</span> 
+                    <span className='tw-follow-card__info-username'>@{userName}</span> 
                 </div>
             </header>
 

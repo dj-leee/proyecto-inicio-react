@@ -17,7 +17,7 @@ function App() {
   ];
 
   return (
-    <section className='App'>
+    <section className='app'>
         <h1>A quién seguir</h1>
 
         {/* 3. Renderizado de Componentes con Props */}
