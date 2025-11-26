@@ -1,0 +1,88 @@
+/* src/App.css */
+
+/* 1. Estilo para el contenedor general de la aplicación */
+.app {
+  display: flex; /* Usamos Flexbox para ordenar las tarjetas */
+  flex-direction: column; /* Una debajo de otra */
+  gap: 1.25rem; /* Espacio entre tarjetas */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Que ocupe toda la altura de la pantalla */
+  background-color: #222; /* Fondo oscuro estilo Twitter */
+  color: #fff; /* Texto blanco */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* 2. Estilo de la Tarjeta (El artículo completo) */
+.tw-followCard {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: .8rem;
+  justify-content: space-between; /* Separa el texto del botón */
+  min-width: 340px; /* Tamaño fijo como en Twitter móvil */
+  
+}
+
+/* 3. La cabecera (Avatar + Nombres) */
+.tw-followCard-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 4. La imagen del avatar */
+.tw-followCard-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 1000px; /* Esto la hace redonda */
+}
+
+/* 5. Los textos */
+.tw-followCard-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tw-followCard-infoUserName {
+  opacity: .6; /* Hacemos el @usuario un poco más gris */
+}
+
+/* 6. EL BOTÓN (Aquí está la magia interactiva) */
+.tw-followCard-button {
+  cursor: pointer;
+  margin-left: 16px;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #000;
+  transition: .3s ease background-color; /* Animación suave al pasar el ratón */
+}
+
+.tw-followCard-button:hover {
+  opacity: .8;
+}
+
+/* 7. ESTADO: Cuando ya estás siguiendo (clase condicional) */
+/* Fíjate que en el JSX pusimos una lógica para añadir esta clase si isFollowing es true */
+.tw-followCard-button.is-following {
+  border: 1px solid #bbb;
+  background: transparent;
+  color: #fff;
+  width: 140px;
+}
+
+/* Efecto ROJO al pasar el ratón por encima de "Siguiendo" */
+.tw-followCard-button.is-following:hover {
+  background-color: rgba(255, 0, 0, 0.178);
+  color: red;
+  border: 1px solid red;
+  opacity: 1;
+}
+
+/* Un truco visual: cuando pasas el ratón por encima de "Siguiendo",
+   el texto debería cambiar a "Dejar de seguir". 
+   Esto se suele hacer con CSS ::after o cambiando el texto en React.
+   Por ahora lo dejamos simple. */

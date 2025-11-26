@@ -14,6 +14,8 @@ function App() {
     { userName: 'midudev', name: 'Miguel Ángel Durán', isFollowing: true },
     { userName: 'pheralb', name: 'Pablo H.', isFollowing: false },
     { userName: 'elonmusk', name: 'Elon Musk', isFollowing: false },
+    { userName: 'djperez', name: 'DJ Pérez', isFollowing: false },
+    { userName: 'facebook', name: 'Facebook', isFollowing: true },
   ];
 
   return (
