@@ -27,28 +27,19 @@ function App() {
            le pasamos la información como si fueran atributos HTML (userName="...").
            Esos atributos son las PROPS.
         */}
-
-        {/* Ejemplo 1: El código de Midudev */}
-        <TwitterFollowCard 
-          userName="midudev" 
-          name="Miguel Ángel Durán" 
-        />
+  
         
-        {/* Ejemplo 2: Tu futuro componente para tu negocio */}
-        <TwitterFollowCard 
-          userName="djperez" 
-          name="DJ Pérez"
-        />
-
         {/* Ejemplo 3: El poder de los arrays y el método map (lo veremos después) */}
-        {usuarios.map(user => (
+        {
+        usuarios.map(user => (
             <TwitterFollowCard 
                 key={user.userName} // Necesario para React, lo vemos luego
                 userName={user.userName} 
                 name={user.name} 
-                // Aquí podrías añadir props para el estilo o la lógica inicial
+                initialIsFollowing={user.isFollowing}
             />
-        ))}
+        ))
+        }
 
     </section>
   );

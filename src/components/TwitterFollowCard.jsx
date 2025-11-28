@@ -13,13 +13,13 @@ import React from 'react';
 
 // Desestructuramos las props para usarlas más fácilmente.
 // Aquí esperamos recibir 'userName' y 'name'.
-function TwitterFollowCard ({ userName, name }) { 
+function TwitterFollowCard ({ children, userName, name, initialIsFollowing }) { 
     
     // 3. Lógica interna: Definir el texto del botón
     // Explicación: Definimos un estado simple, que es la única lógica que reside
     // dentro de la tarjeta (si está siguiendo o no). Esto usa el hook useState.
     // Aunque aún no lo hemos visto, lo pongo para que el componente sea funcional.
-    const [isFollowing, setIsFollowing] = React.useState(false);
+    const [isFollowing, setIsFollowing] = React.useState(initialIsFollowing);
     
     // 4. Lógica de renderizado:
     // Explicación: Creamos variables para decidir qué texto o clase usar.
@@ -50,6 +50,9 @@ function TwitterFollowCard ({ userName, name }) {
                     <strong className='tw-followCard-name'>{name}</strong> 
                     {/* Explicación: Usamos la prop 'userName' */}
                     <span className='tw-followCard-infoUserName'>@{userName}</span> 
+                </div>
+                <div className='tw-followCard-children-content'>
+                    {children}
                 </div>
             </header>
 
